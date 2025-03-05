@@ -1,1 +1,78 @@
-<link rel="stylesheet" href="../css/estilos.css">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e4e4e4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .btn-primary {
+            background-color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #333;
+        }
+        .text-center a {
+            color: #000;
+            text-decoration: none;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <h2 class="text-center mb-4">Registro</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirme su contraseña" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                    </form>
+                    <p class="text-center mt-3">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
