@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Comentarios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #cbddc5; /* Fondo verde */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-label {
+            font-weight: bold;
+            flex: 1;
+            text-align: left;
+        }
+        .form-control {
+            flex: 2;
+        }
+        .btn-primary {
+            background-color: #75ae8b;
+            border-color: #333333;
+        }
+        .btn-primary:hover {
+            background-color: #555555;
+            border-color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Tu opinión nos ayuda mucho:</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="userName" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="userName" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail" class="form-label">Correo:</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Tu correo" required>
+            </div>
+            <div class="form-group" style="flex-direction: column; align-items: start;">
+                <label for="userComment" class="form-label">Comentario:</label>
+                <textarea class="form-control" id="userComment" rows="4" placeholder="Escribe tu comentario aquí" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar Comentario</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const userName = document.getElementById('userName').value.trim();
+            const userEmail = document.getElementById('userEmail').value.trim();
+            const userComment = document.getElementById('userComment').value.trim();
+
+            if (userName && userEmail && userComment) {
+                alert('¡Gracias por tu comentario, ' + userName + '!');
+
+                document.getElementById('commentForm').reset();
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        });
+    </script>
+</body>
+</html>
