@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Editar Producto</h2>
+        
+        <table class="table table-bordered table-azul mt-3">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Camiseta</td>
+                    <td>Camiseta de algodón</td>
+                    <td>$15</td>
+                    <td>Hombre</td>
+                    <td><img src="img/camiseta.jpg" alt="Camiseta" width="50"></td>
+                    <td><button class="btn btn-warning btn-editar">Editar</button></td>
+                </tr>
+                <tr>
+                    <td>Vestido</td>
+                    <td>Vestido elegante</td>
+                    <td>$30</td>
+                    <td>Mujer</td>
+                    <td><img src="img/vestido.jpg" alt="Vestido" width="50"></td>
+                    <td><button class="btn btn-warning btn-editar">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Formulario para editar producto -->
+        <div class="mt-5">
+            <h3>Modificar Producto</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del Producto</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese una descripción"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio">
+                </div>
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoría</label>
+                    <select class="form-select" id="categoria">
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="niños">Niños</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen del Producto</label>
+                    <input type="file" class="form-control" id="imagen">
+                </div>
+                <button type="submit" class="btn btn-success w-100">Actualizar Producto</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
