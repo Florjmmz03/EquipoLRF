@@ -1,0 +1,39 @@
+.navbar-custom {
+    background-color: #cbddc5 !important;
+}
+
+.btn-outline-light.text-dark {
+    color: black !important;
+    border-color: black !important;
+}
+
+.form-control {
+    border: 1px solid black !important;
+}
+
+.footer-custom {
+    color: black !important;
+}
+
+.footer-custom a {
+    color: black !important;
+}
+
+.footer-custom a:hover {
+    color: #333 !important;
+}
+
+.btn-custom {
+    background-color: #779977 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #000000 !important; /* Un tono más oscuro al pasar el mouse */
+}
+
+
