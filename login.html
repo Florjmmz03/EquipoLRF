@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="bootstrap.css"> 
+    <style>
+        /* Colores */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #cbddc5; 
+            font-family: 'Poppins', sans-serif;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container .logo {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+        .btn-primary {
+            background-color: #779977;
+            border-color: #779977;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #0c5f31;
+            border-color: #0c5f31;
+        }
+        .form-control {
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #0d0303;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group button {
+            border-radius: 8px;
+        }
+        a {
+            color: #0c580f;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            height: 1px;
+            background: #ddd;
+        }
+        .btn-dark {
+            font-weight: bold;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="Img/logo.png" alt="Logo" class="logo" style="width:50% ;" > 
+        <h2>Inicia sesión</h2>
+        <form>
+            <div class="mb-3 text-start">
+                <label for="email" class="form-label">Correo electrónico: </label>
+                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+            </div>
+            <div class="mb-3 text-start" style="margin-bottom: 20px;">
+
+                <label for="password" class="form-label">Contraseña: </label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
+                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
+                        👁️
+                    </button>
+                </div>
+            </div>
+            <div class="mb-3 text-end" style="margin-bottom: 20px;">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+            <div class="mt-3">
+                <p>¿No tienes cuenta? <a href="#">Crear cuenta</a></p>
+            </div>
+            <hr>
+    
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>
