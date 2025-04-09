@@ -1,78 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/estilos.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #e4e4e4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-        }
-        .card {
-            border: none;
-            border-radius: 12px;
-            padding: 2rem;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-control {
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-        .btn-primary {
-            background-color: #000;
-            border: none;
-            border-radius: 8px;
-            padding: 10px;
-        }
-        .btn-primary:hover {
-            background-color: #333;
-        }
-        .text-center a {
-            color: #000;
-            text-decoration: none;
-        }
-        .text-center a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario</title>
+  <!-- Importamos Tailwind CSS desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="card">
-                    <h2 class="text-center mb-4">Registro</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirme su contraseña" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
-                    </form>
-                    <p class="text-center mt-3">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="bg-[#cbddc5] min-h-screen flex items-center justify-center font-sans">
+  <!-- Contenedor principal centrado y con color de fondo personalizado -->
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <!-- Título centrado -->
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Registro</h2>
+
+    <!-- Formulario de registro -->
+    <form>
+      <!-- Campo: Nombre -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+        <input type="text" id="name" class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese su nombre" required />
+      </div>
+
+      <!-- Campo: Correo Electrónico -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+        <input type="email" id="email" class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese su correo" required />
+      </div>
+
+      <!-- Campo: Contraseña -->
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input type="password" id="password" class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese su contraseña" required />
+      </div>
+
+      <!-- Campo: Confirmar Contraseña -->
+      <div class="mb-6">
+        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmar Contraseña</label>
+        <input type="password" id="confirm-password" class="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Confirme su contraseña" required />
+      </div>
+
+      <!-- Botón de registro -->
+      <button type="submit" class="w-full bg-[#779977] text-white py-3 rounded-lg hover:bg-[#0c5f31] transition-colors">Registrarse</button>
+    </form>
+
+    <!-- Enlace para ir al login -->
+    <p class="text-center text-sm text-gray-700 mt-4">
+      ¿Ya tienes cuenta? <a href="login.html" class="text-black font-medium hover:underline">Inicia sesión</a>
+    </p>
+  </div>
 </body>
 </html>
