@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container mt-5">
-        <h2 class="text-center">Lista de Productos</h2>
+<body class="flex justify-center items-center min-h-screen bg-[#cbddc5] font-sans">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl">
+        <h2 class="text-2xl font-semibold text-center mb-6 text-black">Lista de Productos</h2>
         
-        <div class="mb-3">
-            <label for="categoriaFiltro" class="form-label">Filtrar por Categoría</label>
-            <select class="form-select" id="categoriaFiltro">
+        <div class="mb-4">
+            <label for="categoriaFiltro" class="block text-sm font-medium text-black mb-2">Filtrar por Categoría</label>
+            <select id="categoriaFiltro" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]">
                 <option value="all" selected>Todos los productos</option>
                 <option value="hombre">Hombre</option>
                 <option value="mujer">Mujer</option>
@@ -21,37 +20,37 @@
             </select>
         </div>
 
-        <table class="table table-bordered table-azul mt-3">
+        <table class="table-auto w-full border-collapse border border-gray-300 mb-8">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Categoría</th>
-                    <th>Imagen</th>
+                    <th class="border border-gray-300 px-4 py-2">Nombre</th>
+                    <th class="border border-gray-300 px-4 py-2">Descripción</th>
+                    <th class="border border-gray-300 px-4 py-2">Precio</th>
+                    <th class="border border-gray-300 px-4 py-2">Categoría</th>
+                    <th class="border border-gray-300 px-4 py-2">Imagen</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="producto" data-categoria="hombre">
-                    <td>Camiseta</td>
-                    <td>Camiseta de algodón</td>
-                    <td>$15</td>
-                    <td>Hombre</td>
-                    <td><img src="img/camiseta.jpg" alt="Camiseta" width="50"></td>
+                    <td class="border border-gray-300 px-4 py-2">Camiseta</td>
+                    <td class="border border-gray-300 px-4 py-2">Camiseta de algodón</td>
+                    <td class="border border-gray-300 px-4 py-2">$15</td>
+                    <td class="border border-gray-300 px-4 py-2">Hombre</td>
+                    <td class="border border-gray-300 px-4 py-2"><img src="img/camiseta.jpg" alt="Camiseta" class="w-12"></td>
                 </tr>
                 <tr class="producto" data-categoria="mujer">
-                    <td>Vestido</td>
-                    <td>Vestido elegante</td>
-                    <td>$30</td>
-                    <td>Mujer</td>
-                    <td><img src="img/vestido.jpg" alt="Vestido" width="50"></td>
+                    <td class="border border-gray-300 px-4 py-2">Vestido</td>
+                    <td class="border border-gray-300 px-4 py-2">Vestido elegante</td>
+                    <td class="border border-gray-300 px-4 py-2">$30</td>
+                    <td class="border border-gray-300 px-4 py-2">Mujer</td>
+                    <td class="border border-gray-300 px-4 py-2"><img src="img/vestido.jpg" alt="Vestido" class="w-12"></td>
                 </tr>
                 <tr class="producto" data-categoria="niños">
-                    <td>Pantalón</td>
-                    <td>Pantalón para niños</td>
-                    <td>$20</td>
-                    <td>Niños</td>
-                    <td><img src="img/pantalon.jpg" alt="Pantalón" width="50"></td>
+                    <td class="border border-gray-300 px-4 py-2">Pantalón</td>
+                    <td class="border border-gray-300 px-4 py-2">Pantalón para niños</td>
+                    <td class="border border-gray-300 px-4 py-2">$20</td>
+                    <td class="border border-gray-300 px-4 py-2">Niños</td>
+                    <td class="border border-gray-300 px-4 py-2"><img src="img/pantalon.jpg" alt="Pantalón" class="w-12"></td>
                 </tr>
             </tbody>
         </table>

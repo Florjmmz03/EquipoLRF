@@ -4,73 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container mt-5">
-        <h2 class="text-center">Editar Producto</h2>
+<body class="flex justify-center items-center min-h-screen bg-[#cbddc5] font-sans">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl">
+        <h2 class="text-2xl font-semibold text-center mb-6 text-black">Editar Producto</h2>
         
-        <table class="table table-bordered table-azul mt-3">
+        <table class="table-auto w-full border-collapse border border-gray-300 mb-8">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Categoría</th>
-                    <th>Imagen</th>
-                    <th>Acciones</th>
+                    <th class="border border-gray-300 px-4 py-2">Nombre</th>
+                    <th class="border border-gray-300 px-4 py-2">Descripción</th>
+                    <th class="border border-gray-300 px-4 py-2">Precio</th>
+                    <th class="border border-gray-300 px-4 py-2">Categoría</th>
+                    <th class="border border-gray-300 px-4 py-2">Imagen</th>
+                    <th class="border border-gray-300 px-4 py-2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Camiseta</td>
-                    <td>Camiseta de algodón</td>
-                    <td>$15</td>
-                    <td>Hombre</td>
-                    <td><img src="img/camiseta.jpg" alt="Camiseta" width="50"></td>
-                    <td><button class="btn btn-warning btn-editar">Editar</button></td>
+                    <td class="border border-gray-300 px-4 py-2">Camiseta</td>
+                    <td class="border border-gray-300 px-4 py-2">Camiseta de algodón</td>
+                    <td class="border border-gray-300 px-4 py-2">$15</td>
+                    <td class="border border-gray-300 px-4 py-2">Hombre</td>
+                    <td class="border border-gray-300 px-4 py-2"><img src="img/camiseta.jpg" alt="Camiseta" class="w-12"></td>
+                    <td class="border border-gray-300 px-4 py-2"><button class="bg-[#779977] text-white font-bold px-4 py-2 rounded hover:bg-[#0c5f31] transition-colors">Editar</button></td>
                 </tr>
                 <tr>
-                    <td>Vestido</td>
-                    <td>Vestido elegante</td>
-                    <td>$30</td>
-                    <td>Mujer</td>
-                    <td><img src="img/vestido.jpg" alt="Vestido" width="50"></td>
-                    <td><button class="btn btn-warning btn-editar">Editar</button></td>
+                    <td class="border border-gray-300 px-4 py-2">Vestido</td>
+                    <td class="border border-gray-300 px-4 py-2">Vestido elegante</td>
+                    <td class="border border-gray-300 px-4 py-2">$30</td>
+                    <td class="border border-gray-300 px-4 py-2">Mujer</td>
+                    <td class="border border-gray-300 px-4 py-2"><img src="img/vestido.jpg" alt="Vestido" class="w-12"></td>
+                    <td class="border border-gray-300 px-4 py-2"><button class="bg-[#779977] text-white font-bold px-4 py-2 rounded hover:bg-[#0c5f31] transition-colors">Editar</button></td>
                 </tr>
             </tbody>
         </table>
         
-        <!-- Formulario para editar producto -->
-        <div class="mt-5">
-            <h3>Modificar Producto</h3>
+        <div>
+            <h3 class="text-lg font-semibold mb-4 text-black">Modificar Producto</h3>
             <form>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre del Producto</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+                <div class="mb-4">
+                    <label for="nombre" class="block text-sm font-medium text-black mb-2">Nombre del Producto</label>
+                    <input type="text" id="nombre" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese el nombre">
                 </div>
-                <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese una descripción"></textarea>
+                <div class="mb-4">
+                    <label for="descripcion" class="block text-sm font-medium text-black mb-2">Descripción</label>
+                    <textarea id="descripcion" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese una descripción"></textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="precio" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="precio" placeholder="Ingrese el precio">
+                <div class="mb-4">
+                    <label for="precio" class="block text-sm font-medium text-black mb-2">Precio</label>
+                    <input type="number" id="precio" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]" placeholder="Ingrese el precio">
                 </div>
-                <div class="mb-3">
-                    <label for="categoria" class="form-label">Categoría</label>
-                    <select class="form-select" id="categoria">
+                <div class="mb-4">
+                    <label for="categoria" class="block text-sm font-medium text-black mb-2">Categoría</label>
+                    <select id="categoria" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]">
                         <option value="hombre">Hombre</option>
                         <option value="mujer">Mujer</option>
                         <option value="niños">Niños</option>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen del Producto</label>
-                    <input type="file" class="form-control" id="imagen">
+                <div class="mb-4">
+                    <label for="imagen" class="block text-sm font-medium text-black mb-2">Imagen del Producto</label>
+                    <input type="file" id="imagen" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#779977]">
                 </div>
-                <button type="submit" class="btn btn-success w-100">Actualizar Producto</button>
+                <button type="submit" class="w-full bg-[#779977] text-white font-bold py-2 rounded-lg hover:bg-[#0c5f31] transition-colors">Actualizar Producto</button>
             </form>
         </div>
     </div>
