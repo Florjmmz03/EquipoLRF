@@ -142,3 +142,99 @@ body {
   color: #333333;
   transform: scale(1.2);
 }
+
+
+:root {
+  --color-form-background: #cbddc5;
+  --color-form-box: #ffffff; 
+  --color-button: #779977; 
+  --color-button-hover: #0c5f31; 
+  --color-text: #333333; 
+  --color-border: black; 
+}
+
+.bg-form-background {
+  background-color: var(--color-form-background);
+}
+
+.form-box {
+  background-color: var(--color-form-box);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* 📝 Estilo de los inputs */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.input-custom {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.input-custom:focus {
+  border-color: var(--color-text);
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Diseño Responsivo */
+@media (max-width: 600px) {
+  .form-box {
+      padding: 30px;
+  }
+
+  .input-custom {
+      font-size: 16px;
+  }
+}
+
+/* 🎨 Botón */
+.button-custom {
+  background-color: var(--color-button);
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.button-custom:hover {
+  background-color: var(--color-button-hover);
+  transform: scale(1.05);
+}
+
+.bg-form-background {
+  background-color: var(--color-form-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.logo-custom {
+  width: 120px; /* Ajusta el tamaño */
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
