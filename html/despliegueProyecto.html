@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>TinTart</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/2custom.css">
+  <title>TinTart</title>
+  <script src="https://cdn.tailwindcss.com"></script> <!-- Cargamos Tailwind -->
 </head>
-<body>
-  <div class="product">
-    <img src="../img/logo.jpeg" alt="Creando arte juntos">
-    <p>Creando arte juntos</p>
+
+<body class="bg-[#cbddc5] text-[#333] font-[Monaco] m-0 p-0">
+
+  <!-- Logo principal -->
+  <div class="text-center my-6">
+    <img src="../img/logo.jpeg" alt="Creando arte juntos" class="w-full max-w-[600px] mx-auto">
+    <p class="mt-4 text-2xl font-semibold">Creando arte juntos</p>
   </div>  
-  <div class="contenedor">
-    <header class="titulo">
-      <h1>Productos</h1>
+
+  <!-- Contenedor principal -->
+  <div class="w-11/12 mx-auto">
+
+    <!-- Título -->
+    <header class="text-center my-8">
+      <h1 class="text-4xl font-bold">Productos</h1>
     </header>
-    <section class="product-grid">
-      <div class="product">
-        <img src="../img/p1.png" alt="Sudadera Montecarlo">
-        <p>Sudadera Montecarlo - $350.00</p>
+
+    <!-- Grilla de productos -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Producto 1 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p1.png" alt="Sudadera Montecarlo" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">Sudadera Montecarlo - $350.00</p>
       </div>
-      <div class="product">
-        <img src="../img/p2.png" alt="Playera SpiderGirl">
-        <p>Playera SpiderGirl - $250.00</p>
+
+      <!-- Producto 2 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p2.png" alt="Playera SpiderGirl" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">Playera SpiderGirl - $250.00</p>
       </div>
-      <div class="product">
-        <img src="../img/p3.png" alt="ToteBag Pug">
-        <p>ToteBag Pug - $200.00</p>
+
+      <!-- Producto 3 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p3.png" alt="ToteBag Pug" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">ToteBag Pug - $200.00</p>
       </div>
-      <div class="product">
-        <img src="../img/p4.png" alt="ToteBag Olivia Rodrigo">
-        <p>ToteBag Olivia Rodrigo - $150.00</p>
+
+      <!-- Producto 4 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p4.png" alt="ToteBag Olivia Rodrigo" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">ToteBag Olivia Rodrigo - $150.00</p>
       </div>
-      <div class="product">
-        <img src="../img/p5.png" alt="TouchePad">
-        <p>TouchePad - $100.00</p>
+
+      <!-- Producto 5 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p5.png" alt="TouchePad" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">TouchePad - $100.00</p>
       </div>
-      <div class="product">
-        <img src="../img/p6.png" alt="Taza Morat">
-        <p>Taza Morat - $150.00</p>
+
+      <!-- Producto 6 -->
+      <div class="bg-[#779977] rounded-lg text-center p-4 shadow-md">
+        <img src="../img/p6.png" alt="Taza Morat" class="max-w-[350px] h-[250px] object-cover rounded-lg mx-auto">
+        <p class="mt-4 text-2xl">Taza Morat - $150.00</p>
       </div>
+
     </section>
+
   </div>
+
 </body>
 </html>
