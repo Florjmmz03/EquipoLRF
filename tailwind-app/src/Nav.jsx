@@ -8,7 +8,6 @@ const Nav = () => {
   const navigation = [
     { title: "INICIO", href: "/" },
     { title: "PRODUCTOS", href: "/Productos" },
-    { title: "OFERTAS", href: "/ofertas" },
     { title: "CONTACTO", href: "/Contactanos" },
     { title: "SOBRE NOSOTROS", href: "/SobreNosotros" }
 
