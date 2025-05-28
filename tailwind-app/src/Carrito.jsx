@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import amex from './assets/img/AMEX-Logo.jpg';
+import amex from './assets/img/Logo-American_Express_.jpg';
 import master from './assets/img/logo-Mastercard.jpg';
 import visa from './assets/img/VISA-Logo.jpg';
 
