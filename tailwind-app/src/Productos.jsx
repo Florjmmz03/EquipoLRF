@@ -64,6 +64,12 @@ const DespliegueProyecto = () => {
               />
               <p className="mt-4 text-lg md:text-xl font-semibold text-[#3a4c3a]">{producto.title}</p>
               <p className="text-[#5c5c5c] text-sm md:text-base">${producto.price}</p>
+              <button
+                className="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                onClick={() => alert(`Producto ${producto.title} agregado al carrito`)}
+              >
+                Agregar al carrito
+              </button>
             </div>
           ))}
         </section>
