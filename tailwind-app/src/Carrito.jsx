@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CarritoContext } from "./carritoContext";
 import amex from './assets/img/Logo-American_Express_.jpg';
 import master from './assets/img/logo-Mastercard.jpg';
 import visa from './assets/img/VISA-Logo.jpg';
 
-
 const ProcesoCompra = () => {
+  const { carrito, vaciarCarrito } = useContext(CarritoContext);
   const [paso, setPaso] = useState(1);
 
-  const productos = [
-    { id: 1, nombre: "Camisa Oversize", talla: "M", precio: 399, imagen: "../img/Producto1.png" },
-    { id: 2, nombre: "Pantalón Cargo", talla: "32", precio: 599, imagen: "../img/Producto2.png" },
-  ];
-
-  const total = productos.reduce((acc, p) => acc + p.precio, 0);
+  const total = carrito.reduce((acc, p) => acc + p.precio, 0);
 
   const [datosEnvio, setDatosEnvio] = useState({
     nombre: "",
@@ -53,7 +49,17 @@ const ProcesoCompra = () => {
     e.preventDefault();
     // Podrías agregar validación adicional aquí
     setPaso(4);
+    vaciarCarrito();
   };
+
+  if (carrito.length === 0 && paso === 1) {
+    return (
+      <main className="contenedor text-center py-20">
+        <h2 className="text-2xl font-semibold mb-4">Tu carrito está vacío</h2>
+        <p>Agrega productos antes de continuar.</p>
+      </main>
+    );
+  }
 
   return (
     <main className="contenedor" style={{ paddingTop: "100px" }}>
@@ -61,8 +67,8 @@ const ProcesoCompra = () => {
         <section id="paso1">
           <h1 className="titulo">Resumen de tu compra</h1>
           <section className="product-grid">
-            {productos.map((p) => (
-              <div key={p.id} className="card">
+            {carrito.map((p, idx) => (
+              <div key={idx} className="card">
                 <img src={p.imagen} alt={p.nombre} />
                 <div className="card-body">
                   <h3>{p.nombre}</h3>

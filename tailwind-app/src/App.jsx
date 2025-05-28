@@ -10,13 +10,14 @@ import Productos from './Productos';
 import SobreNosotros from './SobreNosotros';
 import GuiaTallas from './GuiaTallas';
 import VistaProducto from './VistaProducto';
-
+import { CarritoProvider } from "./carritoContext";
 
 
 function App() {
   
   return (
     <>
+    <CarritoProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Tintart/>}/>
@@ -32,6 +33,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </CarritoProvider>
 
     </>
   )
