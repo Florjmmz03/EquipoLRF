@@ -7,6 +7,11 @@ import Login from './InicioSesion';
 import Registro from './Registro';
 import Carrito from './Carrito';
 import Productos from './Productos';
+import SobreNosotros from './SobreNosotros';
+import GuiaTallas from './GuiaTallas';
+import VistaProducto from './VistaProducto';
+
+
 
 function App() {
   
@@ -21,6 +26,10 @@ function App() {
         <Route path="Productos" element={<Productos/>} />
         <Route path="Contactanos" element={<Contactanos/>} />
         <Route path="*" element={<NotFound/>} />
+        <Route path="SobreNosotros" element={<SobreNosotros/>} />
+        <Route path="GuiaTallas" element={<GuiaTallas/>} />
+        <Route path="/producto/:id" element={<VistaProducto />} />
+
       </Routes>
     </BrowserRouter>
 

@@ -7,6 +7,8 @@ import p3 from './assets/img/p3.png';
 import p4 from './assets/img/p4.png';
 import p5 from './assets/img/p5.png';
 import p6 from './assets/img/p6.png';
+import { Link } from 'react-router-dom';
+
 
 const productos = [
   { id: 1, nombre: 'Sudadera Montecarlo', precio: '$350.00', categoria: 'sudaderas', img: p1 },
@@ -58,9 +60,10 @@ const DespliegueProyecto = () => {
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filtrarProductos().map((producto) => (
             <div
-              key={producto.id}
-              className="bg-white border border-gray-200 rounded-lg p-4 shadow transition-transform duration-300 transform hover:scale-105 hover:shadow-xl"
-            >
+            key={producto.id}
+            className="bg-white border border-gray-200 rounded-lg p-4 shadow transition-transform duration-300 transform hover:scale-105 hover:shadow-xl"
+          >
+            <Link to={`/producto/${producto.id}`}>
               <img
                 src={producto.img}
                 alt={producto.nombre}
@@ -68,7 +71,15 @@ const DespliegueProyecto = () => {
               />
               <p className="mt-4 text-lg md:text-xl font-semibold text-[#3a4c3a]">{producto.nombre}</p>
               <p className="text-[#5c5c5c] text-sm md:text-base">{producto.precio}</p>
-            </div>
+            </Link>
+          
+            {(producto.categoria === 'sudaderas' || producto.categoria === 'playeras') && (
+              <a href="/GuiaTallas" className="text-sm text-[#2b5c38] hover:underline block mt-2">
+                📏 Ver guía de tallas
+              </a>
+            )}
+          </div>
+          
           ))}
         </section>
       </div>
