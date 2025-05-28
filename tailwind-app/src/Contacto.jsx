@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMail } from 'react-icons/fi'; // Ícono de correo (opcional)
+import { FiMail } from 'react-icons/fi';
 
 const ContactScreen = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +7,8 @@ const ContactScreen = () => {
     userEmail: '',
     userMessage: '',
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,8 +20,12 @@ const ContactScreen = () => {
     const { userName, userEmail, userMessage } = formData;
 
     if (userName.trim() && userEmail.trim() && userMessage.trim()) {
-      alert(`¡Gracias por contactarnos, ${userName}!`);
+      setSubmitted(true);
       setFormData({ userName: '', userEmail: '', userMessage: '' });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 4000);
     } else {
       alert('Por favor, completa todos los campos.');
     }
@@ -27,8 +33,7 @@ const ContactScreen = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-white px-4 py-10">
-      <div className="w-full max-w-md bg-white rounded-2xl border border-gray-100 shadow-xl p-8 transition-all duration-300 animate-fade-in">
-        {/* Ícono e introducción */}
+      <div className="w-full max-w-md bg-white rounded-2xl border border-gray-100 shadow-xl p-8 transition-all duration-300 animate-fade-in relative">
         <div className="flex flex-col items-center mb-6">
           <div className="bg-[#779977]/10 p-3 rounded-full mb-2">
             <FiMail className="text-[#779977] text-2xl" />
@@ -41,7 +46,12 @@ const ContactScreen = () => {
           </p>
         </div>
 
-        {/* Formulario */}
+        {submitted && (
+          <div className="mb-4 p-3 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm text-center transition-all duration-300 animate-fade-in-up">
+            ¡Gracias por contactarnos! Hemos recibido tu mensaje.
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-5 font-sans">
           <div>
             <label
@@ -108,18 +118,29 @@ const ContactScreen = () => {
           </button>
         </form>
 
-        {/* Footer opcional */}
         <div className="mt-6 text-center text-xs text-gray-400">
           &copy; {new Date().getFullYear()} Tintart.
         </div>
       </div>
 
-      {/* Animación */}
       <style jsx>{`
         .animate-fade-in {
           animation: fadeIn 0.6s ease-out forwards;
         }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
         @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
           from {
             opacity: 0;
             transform: translateY(10px);
