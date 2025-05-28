@@ -3,8 +3,41 @@ import logo from './assets/img/Logo.png';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState(""); // Aquí va el username de la API
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const togglePassword = () => setShowPassword((prev) => !prev);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const response = await fetch("https://fakestoreapi.com/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password
+        })
+      });
+
+      if (!response.ok) throw new Error("Credenciales incorrectas");
+
+      const data = await response.json();
+      console.log("Token recibido:", data.token);//Se dio el inicio de sesion
+
+      localStorage.setItem("token", data.token); 
+
+      // Redireccionar a productos
+      window.location.href = "/productos";
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-auto mt-10 mb-10">
@@ -14,16 +47,18 @@ const Login = () => {
         Iniciar sesión
       </h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Correo Electrónico
+            Usuario
           </label>
           <input
-            type="email"
+            type="text"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="mt-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]"
-            placeholder="Ingrese su correo"
+            placeholder="Ingrese su usuario"
             required
           />
         </div>
@@ -35,6 +70,8 @@ const Login = () => {
           <input
             type={showPassword ? "text" : "password"}
             id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="mt-1 w-full p-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#779977]"
             placeholder="Ingrese su contraseña"
             required
@@ -54,6 +91,12 @@ const Login = () => {
             Olvidé mi contraseña
           </a>
         </p>
+
+        {error && (
+          <p className="text-red-600 text-sm mb-4 text-center">
+            {error}
+          </p>
+        )}
 
         <button
           type="submit"

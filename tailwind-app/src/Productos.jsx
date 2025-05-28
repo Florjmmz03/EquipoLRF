@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './assets/css/2custom.css';
 import logo from './assets/img/logo.jpeg';
-import p1 from './assets/img/p1.png';
-import p2 from './assets/img/p2.png';
-import p3 from './assets/img/p3.png';
-import p4 from './assets/img/p4.png';
-import p5 from './assets/img/p5.png';
-import p6 from './assets/img/p6.png';
-
-const productos = [
-  { id: 1, nombre: 'Sudadera Montecarlo', precio: '$350.00', categoria: 'sudaderas', img: p1 },
-  { id: 2, nombre: 'Playera SpiderGirl', precio: '$250.00', categoria: 'playeras', img: p2 },
-  { id: 3, nombre: 'ToteBag Pug', precio: '$200.00', categoria: 'totebags', img: p3 },
-  { id: 4, nombre: 'ToteBag Olivia Rodrigo', precio: '$150.00', categoria: 'totebags', img: p4 },
-  { id: 5, nombre: 'TouchePad', precio: '$100.00', categoria: 'otros', img: p5 },
-  { id: 6, nombre: 'Taza Morat', precio: '$150.00', categoria: 'otros', img: p6 },
-];
 
 const DespliegueProyecto = () => {
+  const [productos, setProductos] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todos');
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProductos(data);
+
+        // Extrae categorías únicas
+        const categoriasUnicas = ['todos', ...new Set(data.map(p => p.category))];
+        setCategorias(categoriasUnicas);
+      })
+      .catch((error) => {
+        console.error("Error al cargar productos:", error);
+      });
+  }, []);
 
   const filtrarProductos = () => {
     if (categoriaSeleccionada === 'todos') return productos;
-    return productos.filter(producto => producto.categoria === categoriaSeleccionada);
+    return productos.filter(producto => producto.category === categoriaSeleccionada);
   };
 
   return (
@@ -33,24 +35,18 @@ const DespliegueProyecto = () => {
         </header>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {[
-            { label: 'Todos', value: 'todos' },
-            { label: 'Sudaderas', value: 'sudaderas' },
-            { label: 'Playeras', value: 'playeras' },
-            { label: 'Tote Bags', value: 'totebags' },
-            { label: 'Otros', value: 'otros' },
-          ].map((filtro) => (
+          {categorias.map((cat) => (
             <button
-              key={filtro.value}
-              onClick={() => setCategoriaSeleccionada(filtro.value)}
+              key={cat}
+              onClick={() => setCategoriaSeleccionada(cat)}
               className={`px-4 py-2 rounded-full transition-colors duration-300 font-medium text-sm md:text-base
                 ${
-                  categoriaSeleccionada === filtro.value
+                  categoriaSeleccionada === cat
                     ? 'bg-[#779977] text-white shadow-md'
                     : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                 }`}
             >
-              {filtro.label}
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </button>
           ))}
         </div>
@@ -62,12 +58,12 @@ const DespliegueProyecto = () => {
               className="bg-white border border-gray-200 rounded-lg p-4 shadow transition-transform duration-300 transform hover:scale-105 hover:shadow-xl"
             >
               <img
-                src={producto.img}
-                alt={producto.nombre}
-                className="w-full h-[220px] md:h-[250px] object-cover rounded-md"
+                src={producto.image}
+                alt={producto.title}
+                className="w-full h-[220px] md:h-[250px] object-contain rounded-md"
               />
-              <p className="mt-4 text-lg md:text-xl font-semibold text-[#3a4c3a]">{producto.nombre}</p>
-              <p className="text-[#5c5c5c] text-sm md:text-base">{producto.precio}</p>
+              <p className="mt-4 text-lg md:text-xl font-semibold text-[#3a4c3a]">{producto.title}</p>
+              <p className="text-[#5c5c5c] text-sm md:text-base">${producto.price}</p>
             </div>
           ))}
         </section>
